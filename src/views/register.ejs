@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <script src="/js/register.js"></script>
+</head>
+<body>
+    <%- include('partials/menu'); -%>
+    <div class="app-main__outer">
+        <div class="app-main__inner">        
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="main-card mb-3 card">
+                        <div class="card-body">
+                            <h5><i class="metismenu-icon pe-7s-pen"></i>STUDENT SIGN UP</h5>
+                            <form>
+                                <div class="form-row">
+                                    <div class="input-group col-md-12 mb-3">
+                                        <span class="input-group-text">Full Name</span>
+                                        <input type="text" id="fullName" class="form-control" autocomplete="off">
+                                        <small class="form-text invalid-feedback">Invalid Names!</small>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="input-group col-md-12 mb-3">
+                                        <span class="input-group-text">Username</span>
+                                        <input type="text" class="form-control" id="username" autocomplete="off">
+                                        <small class="form-text invalid-feedback">Invalid Username!</small>
+                                        <div id="usernameHelpBlock" class="form-text">
+                                            Username must be 4 to 24 characters & must not contain special characters.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="input-group col-md-12 mb-3">
+                                        <span class="input-group-text">Matric Number</span>
+                                        <input type="text" class="form-control" id="matricNumber" placeholder="HCS/19/0025">
+                                        <small class="form-text invalid-feedback">Invalid Matric Number!</small>
+                                    </div>
+                                </div>
+                                <div class="form-row" id="showInfo">
+                                    <div class="input-group col-md-6 mb-3">
+                                        <span class="input-group-text">Level</span>
+                                        <select class="form-select" id="level">
+                                            <option></option>
+                                            <option value="ND1">ND1</option>
+                                            <option value="ND2">ND2</option>
+                                            <option value="HND1">HND1</option>
+                                            <option value="HND2">HND2</option>
+                                        </select>
+                                    </div>
+                                    <div class="input-group col-md-6 mb-3">
+                                        <span class="input-group-text">Session</span>
+                                        <select class="form-select" id="session">
+                                            <option></option>
+                                            <option value="2019/2020">2019/2020</option>
+                                            <option value="2020/2021">2020/2021</option>
+                                            <option value="2021/2022">2021/2022</option>
+                                            <option value="2022/2023">2022/2023</option>
+                                            <option value="2023/2024">2023/2024</option>
+                                            <option value="2024/2025">2024/2025</option>
+                                            <option value="2025/2026">2025/2026</option>
+                                            <option value="2026/2027">2026/2027</option>
+                                            <option value="2027/2028">2027/2028</option>
+                                            <option value="2028/2029">2028/2029</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <label for="picture" class="form-label">Profile Picture</label>
+                                    <div class="input-group col-md-12 mb-3">  
+                                        <input class="form-control" type="file" id="picture">
+                                        <small class="form-text invalid-feedback">Invalid File!</small>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="input-group col-md-12 mb-3">
+                                        <span class="input-group-text">Password</span>
+                                        <input type="password" class="form-control" id="password" autocomplete="off">
+                                        <small class="form-text invalid-feedback">Invalid Password!</small>
+                                        <div id="passwordHelpBlock" class="form-text">
+                                            Your password must be 8 to 24 characters long, must contain a capital letter, a small letter, a number, one of (!@#$%), & must not contain space or emoji.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="input-group col-md-12 mb-3">
+                                        <span class="input-group-text">Confirm Password</span>
+                                        <input type="password" class="form-control" id="confirmPassword" autocomplete="off">
+                                        <small class="form-text invalid-feedback">Invalid, Passwords don't match!</small>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-primary" id="registerBtn">Register</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="main-card mb-3 card">
+                        <div class="card-body">
+                            <h5><i class="metismenu-icon pe-7s-pen"></i> LECTURER SIGN UP</h5>
+                            <form>
+                                <div class="form-row">
+                                    <div class="input-group col-md-12 mb-3">
+                                        <span class="input-group-text">Full Name</span>
+                                        <input type="text" id="lFullName" class="form-control" autocomplete="off">
+                                        <small class="form-text invalid-feedback">Invalid Names!</small>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="input-group col-md-12 mb-3">
+                                        <span class="input-group-text">Username</span>
+                                        <input type="text" class="form-control" id="lUsername" autocomplete="off">
+                                        <small class="form-text invalid-feedback">Invalid Username!</small>
+                                        <div id="usernameHelpBlock" class="form-text">
+                                            Username must be 4 to 24 characters & must not contain special characters.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <label for="picture" class="form-label">Profile Picture</label>
+                                    <div class="input-group col-md-12 mb-3">  
+                                        <input class="form-control" type="file" id="lPicture">
+                                        <small class="form-text invalid-feedback">Invalid File!</small>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="input-group col-md-12 mb-3">
+                                        <span class="input-group-text">Password</span>
+                                        <input type="password" class="form-control" id="lPassword" autocomplete="off">
+                                        <small class="form-text invalid-feedback">Invalid Password!</small>
+                                        <div id="passwordHelpBlock" class="form-text">
+                                            Your password must be 8 to 24 characters long, must contain a capital letter, a small letter, a number, one of (!@#$%), & must not contain space or emoji.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="input-group col-md-12 mb-3">
+                                        <span class="input-group-text">Confirm Password</span>
+                                        <input type="password" class="form-control" id="lConfirmPassword" autocomplete="off">
+                                        <small class="form-text invalid-feedback">Invalid, Passwords don't match!</small>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-primary" id="lRegisterBtn">Register</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <%- include('partials/footer'); -%>
+    <script src="/js/main.js"></script> 
+</body>
+</html>  
