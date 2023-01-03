@@ -20,23 +20,26 @@ INSTALL DEPENDENCIES
 ####################
 
 On VS Code, go to the terminal window either by pressing Ctrl+` or going to the Menu -> View -> terminal, type the following:
-    
+
     npm install
 
 Make sure you have an internet connection.
 
+Install PeerJS globally:
+
+    npm install peer -g
+
 RUN THE PROJECT
 ###############
 
-Run the project by typing on the terminal: 
+Run the project by typing on the terminal:
 
     npm start
 
 Open another terminal window & start the Peer Server by typing:
-    
+
     peerjs --port 3001
 
 Open any web browser on your computer & type:
-    
-    http://localhost:3300
 
+    http://localhost:3300
